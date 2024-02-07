@@ -21,12 +21,14 @@
 // Imports a Java class named Math to facilitate caclulations using "PI" and "power of"
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.InputMismatchException;
 
 // Name the program 
 class assignment2DreamTeam {
 
     // Start of Main
     public static void main(String[] args) {
+         
 
         // Create a new instance of Scanner
         Scanner input = new Scanner(System.in);
@@ -36,53 +38,66 @@ class assignment2DreamTeam {
             menu = 0;
             System.out.println((char) 12);// ASCII character 12 is Form Feed which clears the page
             System.out.println();
-            /**
-             * System.out.println("description of the program, what it will do. and then a list line by line presenting options to the user");
-             * System.out.println(" ");
-             * System.out.println();
-             * System.out.println("Cal rect ");
-             * System.out.println();
-             * System.out.println("Calc circle ");
-             * System.out.println();
-             * System.out.println("Calc cube ");
-             * System.out.println();
-             * System.out.println("calc pyramid");
-             * System.out.println();
-             * System.out.println("calc tri");
-             * System.out.println();
-             * System.out.println("calc sphere");
-             **/
-            menu = input.nextInt();
+            System.out.println("description of the program, ");
+            System.out.println("what it will do. and then a list line by line presenting options to the user");
+                 try {
+                    menu = input.nextInt();
 
-            // switch menu goes here.
-
-            // System.out.println("loop question ");
-            loop = input.next().charAt(0);
-
-            System.out.println((char) 2);
+                    switch (menu){
+                      case 1:
+                        pyramid();
+                      break;
+                      case 2:
+                      rectangle();
+                      break;
+                      case 3:
+                      cube();
+                      break;
+                      case 4:
+                      circle();
+                      break;
+      
+                      default:
+                      System.out.println("Program Terminated...." + menu);
+        
+                     }
+                 } catch (InputMismatchException ex) {
+                    }
+            System.out.println("Would you like to start the program over?");
+            loop = input.next().charAt(0);            
 
         } while (loop != 'n' && loop != 'N');
         // System.out.println("Application ended");
-
+         
+        
     }// end of main
 
     private static void rectangle() {
-        Scanner input = new Scanner(System.in);
-        double width = 0;
-        double length = 0;
-        double areaRectangle = 0;
+            try {
+                Scanner input = new Scanner(System.in);
+                double width = 0;
+                double length = 0;
+                double areaRectangle = 0;
+                
 
-        // System.out.println("enter width");
-        width = input.nextDouble();
-        // System.out.println();
-        // System.out.println("enter length");
-        length = input.nextDouble();
-        // System.out.println();
-        areaRectangle = rectangleArea(length, width);
-        // System.out.println(" area is " + areaRectangle);
+                System.out.println("enter width");
+                width = input.nextDouble();
+                System.out.println();
+                System.out.println("enter length");
+                length = input.nextDouble();
+                System.out.println();
+                areaRectangle = rectangleArea(length, width);
+                System.out.println(" area is " + areaRectangle);
+            
+            } catch (InputMismatchException ex) {
+                System.out.println("Unexpected Character. Please start over.");
+                System.out.println();
+            }
+        
     }
 
     private static void circle() {
+        try{
         Scanner input = new Scanner(System.in);
         double radius = 0;
         double areacircle = 0;
@@ -92,9 +107,15 @@ class assignment2DreamTeam {
         // System.out.println();
         areacircle = circleArea(radius);
         // System.out.println(" area is " + areacircle);
+        } catch (InputMismatchException ex) {
+            System.out.println("Unexpected Character. Please start over.");
+            System.out.println();
+        }
     }
+    
 
     private static void triangle() {
+        try {
         Scanner input = new Scanner(System.in);
         double base = 0;
         double height = 0;
@@ -108,9 +129,14 @@ class assignment2DreamTeam {
         System.out.println();
         areaTriangle = triangleArea(base, height);
         // System.out.println(" area is " + areaTriangle);
+        } catch (InputMismatchException ex) {
+            System.out.println("Unexpected Character. Please start over.");
+            System.out.println();
+        }
     }
 
     private static void cube() {
+        try {
         Scanner input = new Scanner(System.in);
         double width = 0;
         double length = 0;
@@ -128,9 +154,14 @@ class assignment2DreamTeam {
         // System.out.println();
         volCube = cubeVolume(length, width, height);
         // System.out.println(" vol is " + volCube);
+        } catch (InputMismatchException ex) {
+            System.out.println("Unexpected Character. Please start over.");
+            System.out.println();
+        }
     }
 
     private static void sphere() {
+        try {
         Scanner input = new Scanner(System.in);
         double radius = 0;
         double volSphere = 0;
@@ -140,26 +171,35 @@ class assignment2DreamTeam {
         // System.out.println();
         volSphere = sphereVolume(radius);
         // System.out.println(" area is " + volSphere);
+        } catch (InputMismatchException ex) {
+            System.out.println("Unexpected Character. Please start over.");
+            System.out.println();
+        }
     }
 
     private static void pyramid() {
+        try {
         Scanner input = new Scanner(System.in);
         double height = 0;
         double length = 0;
         double width = 0;
         double volPyramid = 0;
 
-        // System.out.println("height of it");
+        System.out.println("height of it");
         height = input.nextDouble();
-        // System.out.println();
-        // System.out.println(" length of base");
+        System.out.println();
+        System.out.println(" length of base");
         length = input.nextDouble();
-        // System.out.println();
-        // System.out.println("width of base");
+        System.out.println();
+        System.out.println("width of base");
         width = input.nextDouble();
-        // System.out.println();
+        System.out.println();
         volPyramid = pyramidVolume(height, length, width);
-        // System.out.println(" answer is " + volPyramid);
+        System.out.println(" answer is " + volPyramid);
+        } catch (InputMismatchException ex) {
+            System.out.println("Unexpected Character. Please start over.");
+            System.out.println();
+        }
     }
 
     private static double rectangleArea(final double length, final double width) {
