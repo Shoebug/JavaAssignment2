@@ -36,22 +36,21 @@ class assignment2DreamTeam {
             menu = 0;
             System.out.println((char) 12);// ASCII character 12 is Form Feed which clears the page
             System.out.println();
-            
             System.out.println("This program will calculate the areas and volumes");
             System.out.println("of various shapes.");
             System.out.println();
-            System.out.println("Calculate the area of a rectangle ");
+            System.out.println("Press 1 to calculate the area of a rectangle ");
             System.out.println();
-            System.out.println("Calculate the area of a circle");
+            System.out.println("Press 2 to calculate the area of a circle");
             System.out.println();
-            System.out.println("Calculate the area of a triangle");
+            System.out.println("Press 3 to calculate the area of a triangle");
             System.out.println();
-            System.out.println("Calculate the volume of a pyramid");
+            System.out.println("Press 4 to calculate the volume of a pyramid");
             System.out.println();
-            System.out.println("Calculate the volume of a cube");
+            System.out.println("Press 5 to calculate the volume of a cube");
             System.out.println();
-            System.out.println("Calculate the volume of a sphere");
-            
+            System.out.println("Press 6 to calculate the volume of a sphere");
+
             menu = input.nextInt();
 
             // switch menu goes here.
@@ -72,14 +71,14 @@ class assignment2DreamTeam {
         double length = 0;
         double areaRectangle = 0;
 
-        System.out.println("Please enter width");
+        System.out.println("Please enter the width:");
         width = input.nextDouble();
         System.out.println();
-        System.out.println("Please enter length");
+        System.out.println("Please enter the length:");
         length = input.nextDouble();
         System.out.println();
         areaRectangle = rectangleArea(length, width);
-        System.out.println("The area is " + areaRectangle);
+        System.out.println("The area is " + areaRectangle + "/u33A5");
     }
 
     private static void circle() {
@@ -91,7 +90,7 @@ class assignment2DreamTeam {
         radius = input.nextDouble();
         System.out.println();
         areacircle = circleArea(radius);
-        System.out.println("The area is " + areacircle);
+        System.out.println("The area is " + areacircle + "/u33A5");
     }
 
     private static void triangle() {
@@ -107,7 +106,7 @@ class assignment2DreamTeam {
         height = input.nextDouble();
         System.out.println();
         areaTriangle = triangleArea(base, height);
-        System.out.println("The area is " + areaTriangle);
+        System.out.println("The area is " + areaTriangle + "\u33A5");
     }
 
     private static void cube() {
@@ -127,19 +126,18 @@ class assignment2DreamTeam {
         height = input.nextDouble();
         System.out.println();
         volCube = cubeVolume(length, width, height);
-        System.out.println("The volume is " + volCube);
+        System.out.println("The volume is " + volCube + "\u33A1");
     }
 
     private static void sphere() {
         Scanner input = new Scanner(System.in);
         double radius = 0;
         double volSphere = 0;
-
         System.out.println("Please enter radius");
         radius = input.nextDouble();
         System.out.println();
         volSphere = sphereVolume(radius);
-        System.out.println("The volume is " + volSphere);
+        System.out.println("The volume is " + volSphere + "\u33A1");
     }
 
     private static void pyramid() {
@@ -159,7 +157,7 @@ class assignment2DreamTeam {
         width = input.nextDouble();
         System.out.println();
         volPyramid = pyramidVolume(height, length, width);
-        System.out.println("The volume is " + volPyramid);
+        System.out.println("The volume is " + volPyramid + "\u33A1");
     }
 
     private static double rectangleArea(final double length, final double width) {
