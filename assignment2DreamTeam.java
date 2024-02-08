@@ -19,6 +19,7 @@
 
 // Imports a Java Utility named scanner to facilitate the input from the keyboard
 // Imports a Java class named Math to facilitate caclulations using "PI" and "power of"
+// Imports a Java Utility for error catching and handling
 import java.util.Scanner;
 import java.lang.Math;
 import java.util.InputMismatchException;
@@ -28,200 +29,329 @@ class assignment2DreamTeam {
 
     // Start of Main
     public static void main(String[] args) {
-         
 
         // Create a new instance of Scanner
         Scanner input = new Scanner(System.in);
         int menu, loop;
 
+        // begining of do/while loop for main program
         do {
             menu = 0;
             System.out.println((char) 12);// ASCII character 12 is Form Feed which clears the page
             System.out.println();
-            System.out.println("description of the program, ");
-            System.out.println("what it will do. and then a list line by line presenting options to the user");
-                 try {
-                    menu = input.nextInt();
 
-                    switch (menu){
-                      case 1:
-                        pyramid();
-                      break;
-                      case 2:
-                      rectangle();
-                      break;
-                      case 3:
-                      cube();
-                      break;
-                      case 4:
-                      circle();
-                      break;
-      
-                      default:
-                      System.out.println("Program Terminated...." + menu);
-        
-                     }
-                 } catch (InputMismatchException ex) {
-                    }
+            // begining of print statments directing the user to which option to select
+            System.out.println("This program will calculate the areas and volumes");
+            System.out.println("of various shapes.");
+            System.out.println();
+            System.out.println("Press 1 to calculate the area of a rectangle");
+            System.out.println();
+            System.out.println("Press 2 to calculate the area of a circle");
+            System.out.println();
+            System.out.println("Press 3 to calculate the area of a triangle");
+            System.out.println();
+            System.out.println("Press 4 to calculate the volume of a pyramid");
+            System.out.println();
+            System.out.println("Press 5 to calculate the volume of a cube");
+            System.out.println();
+            System.out.println("Press 6 to calculate the volume of a sphere");
+
+            //begining of try/catch statement to handle any unexpected inputs and allows the user to try again without closing out the whole program
+            try {
+                menu = input.nextInt();
+
+                switch (menu) { //switch menu for directing to each option/method
+                    case 1:
+                        rectangle(); //directs to the rectangle method
+                        break;
+                    case 2:
+                        circle();//directs to the circle method
+                        break;
+                    case 3:
+                        triangle();//directs to the triangle method
+                        break;
+                    case 4:
+                        pyramid();//directs to the pyramid method
+                        break;
+                    case 5:
+                        cube();//directs to the cube method
+                        break;
+                    case 6:
+                        sphere();//directs to the sphere method
+                        break;
+
+                    default:
+                        System.out.println("Selected option unavailable. Please select 1 through 6.");
+                }// end of switch
+
+            } catch (InputMismatchException ex) {
+            }// end of try/catch, putting the user back to the input of entering the switch menu
+
+            System.out.println();
             System.out.println("Would you like to start the program over?");
-            loop = input.next().charAt(0);            
+            loop = input.next().charAt(0);
 
-        } while (loop != 'n' && loop != 'N');
-        // System.out.println("Application ended");
-         
-        
+            System.out.println((char) 2); // ascii char for start of text
+
+        } while (loop != 'n' && loop != 'N'); // closes loop when "N" or "n" is inputed
+
+        System.out.println("Application ended. Thank you!");
+
     }// end of main
 
+    //Start of method for processing rectangle calculation, passing it to the function for the actual calculation, and printing the returned results
     private static void rectangle() {
-            try {
-                Scanner input = new Scanner(System.in);
-                double width = 0;
-                double length = 0;
-                double areaRectangle = 0;
-                
 
-                System.out.println("enter width");
-                width = input.nextDouble();
-                System.out.println();
-                System.out.println("enter length");
-                length = input.nextDouble();
-                System.out.println();
-                areaRectangle = rectangleArea(length, width);
-                System.out.println(" area is " + areaRectangle);
-            
-            } catch (InputMismatchException ex) {
-                System.out.println("Unexpected Character. Please start over.");
-                System.out.println();
-            }
-        
-    }
+        //begining of try/catch statement to handle any unexpected inputs and allows the user to try again without closing out the whole program
+        try {
 
+            Scanner input = new Scanner(System.in);
+
+            //initialises these variables for use later in code
+            double width = 0;
+            double length = 0;
+            double areaRectangle = 0;
+
+            System.out.println("Please enter the width:");
+
+            width = input.nextDouble();
+
+            System.out.println();
+            System.out.println("Please enter the length:");
+
+            length = input.nextDouble();
+
+            //passes all the inputed values to the respective udf and returns the value
+            areaRectangle = rectangleArea(length, width);
+
+            //prints returned calculation
+            System.out.println();
+            System.out.print("The area is ");
+            System.out.printf("%.2f", areaRectangle);
+            System.out.println("\u33A1");
+
+        } catch (InputMismatchException ex) {
+            System.out.println("Unexpected Character. Please start over.");
+            System.out.println();
+        }
+    }//end of method for calculation
+
+    //Start of method for processing circle calculation, passing it to the function for the actual calculation, and printing the returned results
     private static void circle() {
-        try{
-        Scanner input = new Scanner(System.in);
-        double radius = 0;
-        double areacircle = 0;
 
-        // System.out.println("enter radis");
-        radius = input.nextDouble();
-        // System.out.println();
-        areacircle = circleArea(radius);
-        // System.out.println(" area is " + areacircle);
+        //begining of try/catch statement to handle any unexpected inputs and allows the user to try again without closing out the whole program
+        try {
+
+            Scanner input = new Scanner(System.in);
+
+            //initialises these variables for use later in code
+            double radius = 0;
+            double areacircle = 0;
+
+            System.out.println("Please enter the radius");
+            System.out.println();
+
+            radius = input.nextDouble();
+            
+            //passes all the inputed values to the respective udf and returns the value
+            areacircle = circleArea(radius);
+
+            //prints returned calculation
+            System.out.println();
+            System.out.print("The area is ");
+            System.out.printf("%.2f", areacircle);
+            System.out.println("\u33A1");
+
         } catch (InputMismatchException ex) {
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
-    }
-    
+    }//end of method for calculation
 
+    //Start of method for processing triangle calculation, passing it to the function for the actual calculation, and printing the returned results
     private static void triangle() {
-        try {
-        Scanner input = new Scanner(System.in);
-        double base = 0;
-        double height = 0;
-        double areaTriangle = 0;
 
-        // System.out.println("enter base");
-        base = input.nextDouble();
-        // System.out.println();
-        // System.out.println("enter height");
-        height = input.nextDouble();
-        System.out.println();
-        areaTriangle = triangleArea(base, height);
-        // System.out.println(" area is " + areaTriangle);
+        //begining of try/catch statement to handle any unexpected inputs and allows the user to try again without closing out the whole program
+        try {
+
+            Scanner input = new Scanner(System.in);
+
+            //initialises these variables for use later in code
+            double base = 0;
+            double height = 0;
+            double areaTriangle = 0;
+
+            System.out.println("Please enter the base");
+            System.out.println();
+
+            base = input.nextDouble();
+            
+            System.out.println("Please enter the height");
+            System.out.println();
+
+            height = input.nextDouble();
+            
+            //passes all the inputed values to the respective udf and returns the value
+            areaTriangle = triangleArea(base, height);
+
+            //prints returned calculation
+            System.out.println();
+            System.out.print("The area is ");
+            System.out.printf("%.2f", areaTriangle);
+            System.out.println("\u33A1");
+
         } catch (InputMismatchException ex) {
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
-    }
+    }//end of method for calculation
 
+    //Start of method for processing cube calculation, passing it to the function for the actual calculation, and printing the returned results
     private static void cube() {
-        try {
-        Scanner input = new Scanner(System.in);
-        double width = 0;
-        double length = 0;
-        double height = 0;
-        double volCube = 0;
 
-        // System.out.println("enter width");
-        width = input.nextDouble();
-        // System.out.println();
-        // System.out.println("enter length");
-        length = input.nextDouble();
-        // System.out.println();
-        // System.out.println("enter height");
-        height = input.nextDouble();
-        // System.out.println();
-        volCube = cubeVolume(length, width, height);
-        // System.out.println(" vol is " + volCube);
+        //begining of try/catch statement to handle any unexpected inputs and allows the user to try again without closing out the whole program
+        try {
+
+            Scanner input = new Scanner(System.in);
+
+            //initialises these variables for use later in code
+            double width = 0;
+            double length = 0;
+            double height = 0;
+            double volCube = 0;
+
+            System.out.println("Please enter the width");
+            System.out.println();
+
+            width = input.nextDouble();
+            
+            System.out.println("Please enter the length");
+            System.out.println();
+
+            length = input.nextDouble();
+            
+            System.out.println("Please enter the height");
+            System.out.println();
+
+            height = input.nextDouble();
+            
+            //passes all the inputed values to the respective udf and returns the value
+            volCube = cubeVolume(length, width, height);
+
+            //prints returned calculation
+            System.out.println();
+            System.out.print("The area is ");
+            System.out.printf("%.2f", volCube);
+            System.out.println("\u33A5");
+
         } catch (InputMismatchException ex) {
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
-    }
+    }//end of method for calculation
 
+    //Start of method for processing sphere calculation, passing it to the function for the actual calculation, and printing the returned results
     private static void sphere() {
-        try {
-        Scanner input = new Scanner(System.in);
-        double radius = 0;
-        double volSphere = 0;
 
-        // System.out.println("enter radius");
-        radius = input.nextDouble();
-        // System.out.println();
-        volSphere = sphereVolume(radius);
-        // System.out.println(" area is " + volSphere);
+        //begining of try/catch statement to handle any unexpected inputs and allows the user to try again without closing out the whole program
+        try {
+
+            Scanner input = new Scanner(System.in);
+
+            //initialises these variables for use later in code
+            double radius = 0;
+            double volSphere = 0;
+
+            System.out.println("Please enter the radius");
+            System.out.println();
+
+            radius = input.nextDouble();
+            
+            //passes all the inputed values to the respective udf and returns the value
+            volSphere = sphereVolume(radius);
+
+            //prints returned calculation
+            System.out.println();
+            System.out.print("The area is ");
+            System.out.printf("%.2f", volSphere);
+            System.out.println("\u33A5");
+
         } catch (InputMismatchException ex) {
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
-    }
+    } //end of method for calculation
 
+    //Start of method for processing pyramid calculation, passing it to the function for the actual calculation, and printing the returned results
     private static void pyramid() {
-        try {
-        Scanner input = new Scanner(System.in);
-        double height = 0;
-        double length = 0;
-        double width = 0;
-        double volPyramid = 0;
 
-        System.out.println("height of it");
-        height = input.nextDouble();
-        System.out.println();
-        System.out.println(" length of base");
-        length = input.nextDouble();
-        System.out.println();
-        System.out.println("width of base");
-        width = input.nextDouble();
-        System.out.println();
-        volPyramid = pyramidVolume(height, length, width);
-        System.out.println(" answer is " + volPyramid);
+        //begining of try/catch statement to handle any unexpected inputs and allows the user to try again without closing out the whole program
+        try {
+
+            Scanner input = new Scanner(System.in);
+
+            //initialises these variables for use later in code
+            double height = 0;
+            double length = 0;
+            double width = 0;
+            double volPyramid = 0;
+
+            System.out.println("Please enter the height");
+            System.out.println();
+
+            height = input.nextDouble();
+            
+            System.out.println("Please enter the length of the base");
+            System.out.println();
+
+            length = input.nextDouble();
+            
+            System.out.println("Please enter the width of rhe base");
+            System.out.println();
+
+            width = input.nextDouble();
+            
+            //passes all the inputed values to the respective udf and returns the value
+            volPyramid = pyramidVolume(height, length, width);
+
+            //prints returned calculation
+            System.out.println();
+            System.out.print("The area is ");
+            System.out.printf("%.2f", volPyramid);
+            System.out.println("\u33A5");
+
         } catch (InputMismatchException ex) {
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
-    }
+    } //end of method for calculation
 
+    // start of square/rectangle area calculation udf
     private static double rectangleArea(final double length, final double width) {
         return ((width) * (length));
     }// end of square/rectangle area calculation udf
 
+    // start of circle area calculation udf
     private static double circleArea(final double radius) {
         return ((Math.PI) * ((radius) * (radius)));
     }// end of circle area calculation udf
 
+    // start of triangle area calculation udf
     private static double triangleArea(final double height, final double base) {
         return ((height) * (base) * (0.5));
     }// end of triangle area calculation udf
 
+    // start of cube/cuboid volume calculation udf
     private static double cubeVolume(final double width, final double length, final double height) {
         return ((width) * (length) * (height));
     }// end of cube/cuboid volume calculation udf
 
+    // start of pyramid volume calculation udf
     private static double pyramidVolume(final double height, final double width, final double length) {
         return ((length) * (width) * (height) / 3);
     }// end of pyramid volume calculation udf
 
+    // start of sphere volume calculation udf
     private static double sphereVolume(final double radius) {
         return ((4.0 / 3.0) * (Math.PI) * (Math.pow(radius, 3)));
     }// end of sphere volume calculation udf
