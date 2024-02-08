@@ -5,6 +5,8 @@
  * 
  * Date: 31/01/2024
  * 
+ * Version: 1.0
+ * 
  * Malachy duties:  go through the code and look for all the commented "system print" lines. Remove the comments and fill in the quotes with the appropriate text
  * 
  * Dovydas duties:  Implement the switch menu around line 50 in the code, theres a comment you should see. 
@@ -13,7 +15,6 @@
  * Ian duties:      Use this code base to create a flowchart
  * 
  * Matthew duties:  Look through the code for every variable mention "int, double, etc" gather all the names and put them in the dictionary table.
- * 
  * 
  */
 
@@ -41,8 +42,7 @@ class assignment2DreamTeam {
             System.out.println();
 
             // begining of print statments directing the user to which option to select
-            System.out.println("This program will calculate the areas and volumes");
-            System.out.println("of various shapes.");
+            System.out.println("This program will calculate the areas and volumes of various shapes.");
             System.out.println();
             System.out.println("Press 1 to calculate the area of a rectangle");
             System.out.println();
@@ -55,6 +55,7 @@ class assignment2DreamTeam {
             System.out.println("Press 5 to calculate the volume of a cube");
             System.out.println();
             System.out.println("Press 6 to calculate the volume of a sphere");
+            System.out.println();
 
             //begining of try/catch statement to handle any unexpected inputs and allows the user to try again without closing out the whole program
             try {
@@ -112,6 +113,8 @@ class assignment2DreamTeam {
             double length = 0;
             double areaRectangle = 0;
 
+            System.out.println((char) 12);// ASCII character 12 is Form Feed which clears the page
+            System.out.println();
             System.out.println("Please enter the width:");
 
             width = input.nextDouble();
@@ -128,9 +131,11 @@ class assignment2DreamTeam {
             System.out.println();
             System.out.print("The area is ");
             System.out.printf("%.2f", areaRectangle);
-            System.out.println("\u33A1");
+            System.out.print("m\u00B2");
+            System.out.println();
 
         } catch (InputMismatchException ex) {
+            System.out.println();
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
@@ -148,8 +153,9 @@ class assignment2DreamTeam {
             double radius = 0;
             double areacircle = 0;
 
-            System.out.println("Please enter the radius");
+            System.out.println((char) 12);// ASCII character 12 is Form Feed which clears the page
             System.out.println();
+            System.out.println("Please enter the radius");
 
             radius = input.nextDouble();
             
@@ -160,9 +166,11 @@ class assignment2DreamTeam {
             System.out.println();
             System.out.print("The area is ");
             System.out.printf("%.2f", areacircle);
-            System.out.println("\u33A1");
+            System.out.print("m\u00B2");
+            System.out.println();
 
         } catch (InputMismatchException ex) {
+            System.out.println();
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
@@ -181,13 +189,14 @@ class assignment2DreamTeam {
             double height = 0;
             double areaTriangle = 0;
 
-            System.out.println("Please enter the base");
+            System.out.println((char) 12);// ASCII character 12 is Form Feed which clears the page
             System.out.println();
+            System.out.println("Please enter the base");
 
             base = input.nextDouble();
             
-            System.out.println("Please enter the height");
             System.out.println();
+            System.out.println("Please enter the height");
 
             height = input.nextDouble();
             
@@ -198,9 +207,11 @@ class assignment2DreamTeam {
             System.out.println();
             System.out.print("The area is ");
             System.out.printf("%.2f", areaTriangle);
-            System.out.println("\u33A1");
+            System.out.print("m\u00B2");
+            System.out.println();
 
         } catch (InputMismatchException ex) {
+            System.out.println();
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
@@ -220,18 +231,19 @@ class assignment2DreamTeam {
             double height = 0;
             double volCube = 0;
 
-            System.out.println("Please enter the width");
+            System.out.println((char) 12);// ASCII character 12 is Form Feed which clears the page
             System.out.println();
+            System.out.println("Please enter the width");
 
             width = input.nextDouble();
             
-            System.out.println("Please enter the length");
             System.out.println();
+            System.out.println("Please enter the length");
 
             length = input.nextDouble();
             
-            System.out.println("Please enter the height");
             System.out.println();
+            System.out.println("Please enter the height");
 
             height = input.nextDouble();
             
@@ -242,9 +254,11 @@ class assignment2DreamTeam {
             System.out.println();
             System.out.print("The area is ");
             System.out.printf("%.2f", volCube);
-            System.out.println("\u33A5");
+            System.out.print("m\u00B2");
+            System.out.println();
 
         } catch (InputMismatchException ex) {
+            System.out.println();
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
@@ -262,8 +276,9 @@ class assignment2DreamTeam {
             double radius = 0;
             double volSphere = 0;
 
-            System.out.println("Please enter the radius");
+            System.out.println((char) 12);// ASCII character 12 is Form Feed which clears the page
             System.out.println();
+            System.out.println("Please enter the radius");
 
             radius = input.nextDouble();
             
@@ -274,9 +289,11 @@ class assignment2DreamTeam {
             System.out.println();
             System.out.print("The area is ");
             System.out.printf("%.2f", volSphere);
-            System.out.println("\u33A5");
+            System.out.print("m\u00B3");
+            System.out.println();
 
         } catch (InputMismatchException ex) {
+            System.out.println();
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
@@ -296,18 +313,19 @@ class assignment2DreamTeam {
             double width = 0;
             double volPyramid = 0;
 
-            System.out.println("Please enter the height");
+            System.out.println((char) 12);// ASCII character 12 is Form Feed which clears the page
             System.out.println();
+            System.out.println("Please enter the height");
 
             height = input.nextDouble();
             
-            System.out.println("Please enter the length of the base");
             System.out.println();
+            System.out.println("Please enter the length of the base");
 
             length = input.nextDouble();
             
-            System.out.println("Please enter the width of rhe base");
             System.out.println();
+            System.out.println("Please enter the width of rhe base");
 
             width = input.nextDouble();
             
@@ -318,9 +336,11 @@ class assignment2DreamTeam {
             System.out.println();
             System.out.print("The area is ");
             System.out.printf("%.2f", volPyramid);
-            System.out.println("\u33A5");
+            System.out.print("m\u00B3");
+            System.out.println();
 
         } catch (InputMismatchException ex) {
+            System.out.println();
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
