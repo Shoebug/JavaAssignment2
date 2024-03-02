@@ -16,6 +16,8 @@
  * 
  * Matthew duties:  Look through the code for every variable mention "int, double, etc" gather all the names and put them in the dictionary table.
  * 
+ * Everyone:        Pick and create a user defined function
+ * 
  */
 
 // Imports a Java Utility named scanner to facilitate the input from the keyboard
@@ -44,17 +46,17 @@ class assignment2DreamTeam {
             // begining of print statments directing the user to which option to select
             System.out.println("This program will calculate the areas and volumes of various shapes.");
             System.out.println();
-            System.out.println("Press 1 to calculate the area of a rectangle");
+            System.out.println("Press 1 to calculate the area of a rectangle.");
             System.out.println();
-            System.out.println("Press 2 to calculate the area of a circle");
+            System.out.println("Press 2 to calculate the area of a circle.");
             System.out.println();
-            System.out.println("Press 3 to calculate the area of a triangle");
+            System.out.println("Press 3 to calculate the area of a triangle.");
             System.out.println();
-            System.out.println("Press 4 to calculate the volume of a pyramid");
+            System.out.println("Press 4 to calculate the volume of a pyramid.");
             System.out.println();
-            System.out.println("Press 5 to calculate the volume of a cube");
+            System.out.println("Press 5 to calculate the volume of a cube.");
             System.out.println();
-            System.out.println("Press 6 to calculate the volume of a sphere");
+            System.out.println("Press 6 to calculate the volume of a sphere.");
             System.out.println();
 
             // begining of try/catch statement to handle any unexpected inputs and allows
@@ -62,24 +64,24 @@ class assignment2DreamTeam {
             try {
                 menu = input.nextInt();
 
-                switch (menu) { // switch menu for directing to each option/method
+                switch (menu) { // switch menu for directing to each option/module
                     case 1:
-                        rectangle(); // directs to the rectangle method
+                        rectangle(); // directs to the rectangle module
                         break;
                     case 2:
-                        circle();// directs to the circle method
+                        circle();// directs to the circle module
                         break;
                     case 3:
-                        triangle();// directs to the triangle method
+                        triangle();// directs to the triangle module
                         break;
                     case 4:
-                        pyramid();// directs to the pyramid method
+                        pyramid();// directs to the pyramid module
                         break;
                     case 5:
-                        cube();// directs to the cube method
+                        cube();// directs to the cube module
                         break;
                     case 6:
-                        sphere();// directs to the sphere method
+                        sphere();// directs to the sphere module
                         break;
 
                     default:
@@ -102,7 +104,7 @@ class assignment2DreamTeam {
 
     }// end of main
 
-    // Start of method for processing rectangle calculation, passing it to the
+    // Start of module for processing rectangle calculation, passing it to the
     // function for the actual calculation, and printing the returned results
     private static void rectangle() {
 
@@ -133,7 +135,7 @@ class assignment2DreamTeam {
 
             // prints returned calculation
             System.out.println();
-            System.out.print("The area is ");
+            System.out.print("The area of the rectangle or square is ");
             System.out.printf("%.2f", areaRectangle);
             System.out.print("m\u00B2");
             System.out.println();
@@ -143,9 +145,9 @@ class assignment2DreamTeam {
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
-    }// end of method for calculation
+    }// end of module for calculation
 
-    // Start of method for processing circle calculation, passing it to the function
+    // Start of module for processing circle calculation, passing it to the function
     // for the actual calculation, and printing the returned results
     private static void circle() {
 
@@ -170,7 +172,7 @@ class assignment2DreamTeam {
 
             // prints returned calculation
             System.out.println();
-            System.out.print("The area is ");
+            System.out.print("The area of the circle is ");
             System.out.printf("%.2f", areacircle);
             System.out.print("m\u00B2");
             System.out.println();
@@ -180,9 +182,9 @@ class assignment2DreamTeam {
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
-    }// end of method for calculation
+    }// end of module for calculation
 
-    // Start of method for processing triangle calculation, passing it to the
+    // Start of module for processing triangle calculation, passing it to the
     // function for the actual calculation, and printing the returned results
     private static void triangle() {
 
@@ -213,7 +215,7 @@ class assignment2DreamTeam {
 
             // prints returned calculation
             System.out.println();
-            System.out.print("The area is ");
+            System.out.print("The area of the triangle is ");
             System.out.printf("%.2f", areaTriangle);
             System.out.print("m\u00B2");
             System.out.println();
@@ -223,9 +225,9 @@ class assignment2DreamTeam {
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
-    }// end of method for calculation
+    }// end of module for calculation
 
-    // Start of method for processing cube calculation, passing it to the function
+    // Start of module for processing cube calculation, passing it to the function
     // for the actual calculation, and printing the returned results
     private static void cube() {
 
@@ -262,7 +264,7 @@ class assignment2DreamTeam {
 
             // prints returned calculation
             System.out.println();
-            System.out.print("The area is ");
+            System.out.print("The volume of the cuboid is ");
             System.out.printf("%.2f", volCube);
             System.out.print("m\u00B2");
             System.out.println();
@@ -272,9 +274,9 @@ class assignment2DreamTeam {
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
-    }// end of method for calculation
+    }// end of module for calculation
 
-    // Start of method for processing sphere calculation, passing it to the function
+    // Start of module for processing sphere calculation, passing it to the function
     // for the actual calculation, and printing the returned results
     private static void sphere() {
 
@@ -299,7 +301,7 @@ class assignment2DreamTeam {
 
             // prints returned calculation
             System.out.println();
-            System.out.print("The area is ");
+            System.out.print("The volume of the sphere is ");
             System.out.printf("%.2f", volSphere);
             System.out.print("m\u00B3");
             System.out.println();
@@ -309,9 +311,9 @@ class assignment2DreamTeam {
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
-    } // end of method for calculation
+    } // end of module for calculation
 
-    // Start of method for processing pyramid calculation, passing it to the
+    // Start of module for processing pyramid calculation, passing it to the
     // function for the actual calculation, and printing the returned results
     private static void pyramid() {
 
@@ -339,7 +341,7 @@ class assignment2DreamTeam {
             length = input.nextDouble();
 
             System.out.println();
-            System.out.println("Please enter the width of rhe base");
+            System.out.println("Please enter the width of the base");
 
             width = input.nextDouble();
 
@@ -348,7 +350,7 @@ class assignment2DreamTeam {
 
             // prints returned calculation
             System.out.println();
-            System.out.print("The area is ");
+            System.out.print("The volume of the pyramid is ");
             System.out.printf("%.2f", volPyramid);
             System.out.print("m\u00B3");
             System.out.println();
@@ -358,7 +360,7 @@ class assignment2DreamTeam {
             System.out.println("Unexpected Character. Please start over.");
             System.out.println();
         }
-    } // end of method for calculation
+    } // end of module
 
     // start of square/rectangle area calculation udf
     private static double rectangleArea(final double length, final double width) {
